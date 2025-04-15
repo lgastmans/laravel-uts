@@ -14,7 +14,7 @@ use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
 final class BillsTable extends PowerGridComponent
 {
-    public string $tableName = 'bills-table-g6yy0y-table';
+    public string $tableName = 'bills';
 
     public function setUp(): array
     {
