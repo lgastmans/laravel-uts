@@ -14,6 +14,12 @@ class BillSyncController extends Controller
         $providedToken = $request->header('X-Sync-Token');
         $expectedToken = config('app.sync_secret');
 
+dd([
+    'provided' => $providedToken,
+    'expected' => $expectedToken
+]);
+
+
         if (!$providedToken || $providedToken !== $expectedToken) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
@@ -61,6 +67,6 @@ class BillSyncController extends Controller
             'inserted' => $inserted,
             'skipped' => $skipped
         ]);
-        
+
     }
 }
