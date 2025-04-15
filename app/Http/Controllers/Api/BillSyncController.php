@@ -11,10 +11,6 @@ class BillSyncController extends Controller
 {
     public function sync(Request $request)
     {
-        return response()->json(['status' => 'success']);
-        
-
-        /*
         $providedToken = $request->header('X-Sync-Token');
         $expectedToken = config('app.sync_secret');
 
@@ -65,6 +61,6 @@ class BillSyncController extends Controller
             'inserted' => $inserted,
             'skipped' => $skipped
         ]);
-        */
+        
     }
 }
