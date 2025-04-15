@@ -64,9 +64,10 @@ class BillSyncController extends Controller
         Log::info("Bill sync completed. Inserted: $inserted, Skipped: $skipped");
 
         return response()->json([
-            'message' => 'Sync completed',
-            'inserted' => $inserted,
-            'skipped' => $skipped
+            'message'   => 'Sync completed',
+            'inserted'  => $inserted,
+            'skipped'   => $skipped,
+            'status'    => 'success'
         ]);
         
     }
