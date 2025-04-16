@@ -65,8 +65,12 @@ final class BillsTable extends PowerGridComponent
     public function columns(): array
     {
         return [
-            Column::make('Id', 'id'),
-            Column::make('Bill id', 'bill_id'),
+            Column::make('Id', 'id')
+                ->hidden(),
+
+            Column::make('Bill id', 'bill_id')
+                ->hidden(),
+
             Column::make('Bill number', 'bill_number')
                 ->sortable()
                 ->searchable(),
@@ -91,14 +95,16 @@ final class BillsTable extends PowerGridComponent
 
             Column::make('Dep time', 'dep_time')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->hidden(),
 
             Column::make('Arr date', 'arr_date_formatted', 'arr_date')
                 ->sortable(),
 
             Column::make('Arr time', 'arr_time')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->hidden(),
 
             Column::make('Vehicle reg no', 'vehicle_reg_no')
                 ->sortable()
@@ -114,7 +120,8 @@ final class BillsTable extends PowerGridComponent
 
             Column::make('Driver id', 'driver_id')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->hidden(),
 
             Column::make('Zoho invoice id', 'zoho_invoice_id')
                 ->sortable()
@@ -125,14 +132,17 @@ final class BillsTable extends PowerGridComponent
 
             Column::make('Synced at', 'synced_at')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->hidden(),
 
             Column::make('Created at', 'created_at_formatted', 'created_at')
-                ->sortable(),
+                ->sortable()
+                ->hidden(),
 
             Column::make('Created at', 'created_at')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->hidden(),
 
             Column::action('Action')
         ];
