@@ -1,6 +1,7 @@
 @import "flatpickr/dist/flatpickr.min.css";
+/*
 @import './../../vendor/power-components/livewire-powergrid/dist/tailwind.css'
-
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
