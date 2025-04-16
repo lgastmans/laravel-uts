@@ -30,7 +30,10 @@ return [
             // 'pencil',
         ],
 
-        'attributes' => ['class' => 'w-5 text-red-600'],
+        'attributes' => [
+            //'class' => 'w-5 text-red-600'
+            'class' => 'min-w-full table-auto'
+        ],
     ],
 
     /*
