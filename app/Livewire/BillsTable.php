@@ -116,7 +116,8 @@ final class BillsTable extends PowerGridComponent
 
             Column::make('Car', 'car')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->hidden(),
 
             Column::make('Driver id', 'driver_id')
                 ->sortable()

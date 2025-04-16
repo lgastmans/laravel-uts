@@ -57,6 +57,8 @@ services:
             PMA_PORT: 3306
         depends_on:
             - mysql
+        networks:
+            - sail
 
 networks:
     sail:
