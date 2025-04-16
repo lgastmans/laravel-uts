@@ -11,6 +11,20 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <style>
+            .roboto-condensed-400 {
+              font-family: "Roboto Condensed", sans-serif;
+              font-optical-sizing: auto;
+              font-weight: 400;
+              font-style: normal;
+              text-align: center;
+              font-size: 2.5rem;
+            }
+        </style>
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -21,6 +35,8 @@
                     <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> -->
                     <img src="{{ asset('avsymbol.png') }}" width="128px">
                 </a>
+                <br>
+                <p class="roboto-condensed-400">UTS</p>
             </div>
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
