@@ -1,5 +1,7 @@
-import './bootstrap';
+import './../../vendor/power-components/livewire-powergrid/dist/powergrid';
 
 import flatpickr from "flatpickr"; 
+window.flatpickr = flatpickr;
 
-import './../../vendor/power-components/livewire-powergrid/dist/powergrid'
+import './bootstrap';
+

@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'zoho' => [
+        'client_id' => env('ZOHO_CLIENT_ID'),
+        'client_secret' => env('ZOHO_CLIENT_SECRET'),
+        'organization_id' => env('ZOHO_ORGANIZATION_ID'),
+        'domain' => env('ZOHO_DOMAIN', 'https://www.zohoapis.in'),
+        'invoice_prefix' => env('ZOHO_INVOICE_PREFIX'),
+    ],
+
 ];
