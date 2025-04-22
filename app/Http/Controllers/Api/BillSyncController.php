@@ -44,17 +44,21 @@ class BillSyncController extends Controller
             $bill = Bill::updateOrCreate(
                 ['bill_id' => $data['BillId']],
                 [
-                    'bill_number' => $data['BillNumber'] ?? null,
-                    'bill_date' => $data['BillDate'] ?? null,
-                    'customer' => $data['Customer'] ?? null,
-                    'from_place' => $data['FromPlace'] ?? null,
-                    'to_place' => $data['ToPlace'] ?? null,
-                    'amount' => $data['Amount'] ?? null,
-                    'vehicle_reg_no' => $data['VehicleRegNo'] ?? null,
-                    'driver_id' => $data['DriverId'] ?? null,
-                    'biller' => $data['Biller'] ?? null,
-                    'bill_type' => $data['BillType'] ?? null,
-                    'community' => $data['Community'] ?? null,
+                    'bill_number'       => $data['BillNumber'] ?? null,
+                    'bill_date'         => $data['BillDate'] ?? null,
+                    'customer'          => $data['Customer'] ?? null,
+                    'from_place'        => $data['FromPlace'] ?? null,
+                    'to_place'          => $data['ToPlace'] ?? null,
+                    'dep_date'          => $data['DepDate'] ?? null,
+                    'dep_time'          => $data['DepTime'] ?? null,
+                    'arr_date'          => $data['ArrDate'] ?? null,
+                    'arr_time'          => $data['ArrTime'] ?? null,
+                    'amount'            => $data['Amount'] ?? null,
+                    'vehicle_reg_no'    => $data['VehicleRegNo'] ?? null,
+                    'driver_id'         => $data['DriverId'] ?? null,
+                    'biller'            => $data['Biller'] ?? null,
+                    'bill_type'         => $data['BillType'] ?? null,
+                    'community'         => $data['Community'] ?? null,
                 ]
             );
 

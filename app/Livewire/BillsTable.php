@@ -148,7 +148,8 @@ final class BillsTable extends PowerGridComponent
 
             Column::make('Zoho invoice id', 'zoho_invoice_id')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->hidden(),
 
             Column::make('Synced at', 'synced_at_formatted', 'synced_at')
                 ->sortable(),
@@ -325,6 +326,8 @@ final class BillsTable extends PowerGridComponent
 
                     if ($invoice && (!empty($invoice['success']))) {
                         $bill->zoho_invoice_id = $invoice['success'];
+                        $bill->zoho_customer_id = $zoho_customer_id;
+                        $bill->synced_at = now();
                         $bill->save();
 
                         $messages[] = "Invoice ".$bill->bill_number." successfully export to Zoho";
