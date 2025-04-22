@@ -81,7 +81,7 @@ final class BillsTable extends PowerGridComponent
             ->add('driver_id')
             ->add('zoho_invoice_id')
             ->add('synced_at')
-            ->add('synced_at_formatted', fn ($bill) => optional($model->synced_at)->format('d-m-Y H:i')),
+            ->add('synced_at_formatted', fn ($bill) => optional($model->synced_at)->format('d-m-Y H:i'))
             ->add('created_at');
     }
 
