@@ -320,7 +320,7 @@ final class BillsTable extends PowerGridComponent
         }
         else {
             Log::error($item);
-            $messages[] = 'Could not retrieve the Transport Charges item '.$item;
+            $messages[] = 'Could not retrieve the Transport Charges item ';
         }
 
         if (!empty($messages)) {
