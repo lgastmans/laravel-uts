@@ -328,7 +328,7 @@ final class BillsTable extends PowerGridComponent
         if (!empty($messages)) {
             $this->dispatch('showBulkMessages', [
                 'type' => 'info',
-                'title' => 'Warnings:',
+                'title' => 'Export status:',
                 'messages' => $messages
             ]);
         }
