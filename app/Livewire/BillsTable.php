@@ -210,35 +210,8 @@ final class BillsTable extends PowerGridComponent
             "created_at" => "2025-04-15 11:19:30"
             "updated_at" => "2025-04-15 11:19:30"
           ]
-
-        {
-            "customer_id": "2326787000000069002",
-            "reference_number": "INV-POS-2025-04-03-CASH",
-            "is_inclusive_tax": false,
-            "date": "2025-04-03",
-            "discount_type": "item_level",
-            "line_items": [
-                {
-                    "item_id": "2326787000000097003",
-                    "tax_id": "2326787000000030330",
-                    "name": "POST CARD",
-                    "rate": 116.92,
-                    "discount": "0%",
-                    "quantity": 1,
-                    "tax_percentage": 12
-                },
-                {
-                    "item_id": "2326787000000096025",
-                    "tax_id": "2326787000000030330",
-                    "name": "RAD20",
-                    "rate": 453.85,
-                    "discount": "0%",
-                    "quantity": 2,
-                    "tax_percentage": 12
-                },
-            ]
-        }
         */
+
         if (empty($this->checkboxValues)) {
             $messages[] = 'Please select at least one bill to export.';
             $this->dispatch('showBulkMessages', [

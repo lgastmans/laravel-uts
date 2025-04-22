@@ -153,7 +153,7 @@ class ZohoApiService
                 'name_startswith' => $name
             ]);
 
-        if ($searchResponse->successful() && !empty($searchResponse['items'])) {
+        if (($searchResponse['code'] == 0) && (!empty($searchResponse['items']))) {
             foreach ($searchResponse["items"] as $row) {
                 if ($row["name"] == $name) { // Exact match check
                     return ['success' => $row['item_id']];
