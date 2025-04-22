@@ -81,6 +81,7 @@ final class BillsTable extends PowerGridComponent
             ->add('driver_id')
             ->add('zoho_invoice_id')
             ->add('synced_at')
+            ->add('synced_at_formatted', fn ($bill) => optional($model->synced_at)->format('d-m-Y H:i')),
             ->add('created_at');
     }
 
@@ -275,7 +276,7 @@ final class BillsTable extends PowerGridComponent
                 if (isset($customer['success'])) {
                     $zoho_customer_id = $customer['success'];
 
-                    $description = "From: ".$bill->from_place." ".$bill->dep_date."\nTo: ".$bill->to_place." ".$bill->arr_date;
+                    $description = "From: ".$bill->from_place." ".$bill->dep_date." ".$bill->dep_time."\nTo: ".$bill->to_place." ".$bill->arr_date." ".$bill->arr_time;
 
                     // invoice details
                     $invoice_data = [
