@@ -67,7 +67,7 @@ final class BillsTable extends PowerGridComponent
             ->add('id')
             ->add('bill_id')
             ->add('bill_number')
-            ->add('bill_date_formatted', fn (Bill $model) => Carbon::parse($model->bill_date)->format('d/m/Y H:i:s'))
+            ->add('bill_date_formatted', fn (Bill $model) => Carbon::parse($model->bill_date)->format('d/m/Y'))
             ->add('customer')
             ->add('from_place')
             ->add('to_place')
@@ -81,7 +81,8 @@ final class BillsTable extends PowerGridComponent
             ->add('driver_id')
             ->add('zoho_invoice_id')
             ->add('synced_at')
-            ->add('synced_at_formatted', fn (Bill $model) => optional($model->synced_at)->format('d-m-Y H:i'))
+            ->add('synced_at_formatted', fn (Bill $model) => $model->synced_at ? Carbon::parse($model->synced_at)->format('d-m-Y H:i') : ''
+                )
             ->add('created_at');
     }
 
