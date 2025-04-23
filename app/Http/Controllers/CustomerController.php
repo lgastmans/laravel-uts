@@ -55,7 +55,7 @@ class CustomerController extends Controller
     //public function edit(string $id)
     public function edit(Customer $customer)
     {
-        //dd($customer);
+        dd($customer);
         return view('customers.edit', compact('customer'));
     }
 

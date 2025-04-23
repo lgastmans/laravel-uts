@@ -218,7 +218,7 @@ final class BillsTable extends PowerGridComponent
             $messages[] = 'Please select at least one bill to export.';
             $this->dispatch('showBulkMessages', [
                 'type' => 'info',
-                'title' => 'Warnings:',
+                'title' => 'Export status:',
                 'messages' => $messages
             ]);
         }
@@ -283,7 +283,7 @@ final class BillsTable extends PowerGridComponent
                     $invoice_data = [
                         'customer_id'       => $zoho_customer_id,
                         'reference_number'  => $bill->bill_number,
-                        'is_inclusive_tax'  => false,
+                        'is_inclusive_tax'  => true,
                         'date'              => Carbon::parse($bill->bill_date)->format('Y-m-d'), 
                         'line_items'        => [
                             [
