@@ -164,7 +164,7 @@ class ZohoApiService
         return ['error' => 'Could not retrieve the Transport Charges item.'];
     }
 
-    function getZohoInvoiceByReference($reference) {
+    public function getZohoInvoiceByReference($reference) {
         $accessToken = $this->getAccessToken('invoices');
 
         if (!$accessToken) {
@@ -187,6 +187,17 @@ class ZohoApiService
         }
 
         return ['error' => 'Invoice reference number not found'];
+    }
+
+    private function extractGstin($text) {
+        // GSTIN pattern: 2 digits + 10-char PAN + 1 alphanumeric + Z + 1 alphanumeric
+        $pattern = '/(?<!\w)(\d{2}[A-Z]{5}\d{4}[A-Z][1-9A-Z]Z[0-9A-Z])/i';
+
+        if (preg_match($pattern, $text, $matches)) {
+            return $matches[1]; // Return the matched GSTIN
+        }
+
+        return null;
     }
 
     public function getOrCreateVendor(string $customerName): array
@@ -224,6 +235,8 @@ class ZohoApiService
             return ['success' => $zohoCustomerId];
         }
 
+        $hasGSTIN = $this->extractGstin($customerName);
+
         // Step 2: Create the customer
         $data = Http::withToken($accessToken)
             ->post($searchUrl, [
@@ -231,8 +244,8 @@ class ZohoApiService
                 'contact_name'    => $customerName,
                 'vendor_name'     => $customerName,
                 'contact_type'    => 'customer',
-                //'gst_no'          => $vendor->gstin,
-                'gst_treatment'   => 'consumer',
+                'gst_no'          => (!empty($hasGSTIN) ? $hasGSTIN : ""),
+                'gst_treatment'   => (!empty($hasGSTIN) ? "business_gst" : "consumer"),
             ]);
 
         
