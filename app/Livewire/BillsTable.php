@@ -305,7 +305,7 @@ final class BillsTable extends PowerGridComponent
                         $bill->synced_at = now();
                         $bill->save();
 
-                        $messages[] = "Invoice ".$bill->bill_number." successfully export to Zoho";
+                        $messages[] = "Invoice ".$bill->bill_number." successfully exported to Zoho";
 
                         $this->dispatch('refreshTable');
                     }
