@@ -282,7 +282,7 @@ final class BillsTable extends PowerGridComponent
                     // invoice details
                     $invoice_data = [
                         'customer_id'       => $zoho_customer_id,
-                        'invoice_number'    => $zoho->invoicePrefix." ".$bill->bill_number, 
+                        'invoice_number'    => $bill->bill_number, 
                         'reference_number'  => $bill->bill_number,
                         'is_inclusive_tax'  => true,
                         'date'              => Carbon::parse($bill->bill_date)->format('Y-m-d'), 
@@ -306,7 +306,7 @@ final class BillsTable extends PowerGridComponent
                         $bill->synced_at = now();
                         $bill->save();
 
-                        $messages[] = "Invoice ".$zoho->invoicePrefix." ".$bill->bill_number." successfully exported to Zoho";
+                        $messages[] = "Invoice ".$bill->bill_number." successfully exported to Zoho";
 
                         $this->dispatch('refreshTable');
                     }
