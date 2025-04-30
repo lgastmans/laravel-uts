@@ -45,7 +45,7 @@ class BillSyncController extends Controller
             $bill = Bill::updateOrCreate(
                 ['bill_id' => $data['BillId']],
                 [
-                    'bill_number'       => $invoicePrefix." ".$data['BillNumber'] ?? null,
+                    'bill_number'       => $invoicePrefix."-".$data['BillNumber'] ?? null,
                     'bill_date'         => $data['BillDate'] ?? null,
                     'customer'          => $data['Customer'] ?? null,
                     'from_place'        => $data['FromPlace'] ?? null,
