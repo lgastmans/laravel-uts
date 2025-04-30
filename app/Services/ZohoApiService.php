@@ -88,7 +88,7 @@ class ZohoApiService
         $this->clientSecret = config('services.zoho.client_secret');
         $this->organizationId = config('services.zoho.organization_id');
         $this->zohoDomain = config('services.zoho.domain', 'https://www.zohoapis.in');
-        $this->zohoInvoicePrefix = config('services.zoho.invoice_prefix');
+        $this->invoicePrefix = config('services.zoho.invoice_prefix');
     }
 
     public function getAccessToken(string $scope): string|null

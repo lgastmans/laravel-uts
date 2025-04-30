@@ -3,6 +3,7 @@
 return [
     
     'sync_secret' => env('SYNC_SECRET'),
+    'invoice_prefix' => env('ZOHO_INVOICE_PREFIX'),
 
     /*
     |--------------------------------------------------------------------------
