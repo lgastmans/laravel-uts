@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class CustomerController extends Controller
 {
@@ -33,6 +32,7 @@ class CustomerController extends Controller
             'name'       => 'required|string|max:255',
             'email'      => 'nullable|email|max:255',
             'phone'      => 'nullable|string|max:20',
+            'gst_number' => 'nullable|string|max:255',
             'address'    => 'nullable|string|max:500',
         ]);
 
@@ -55,7 +55,6 @@ class CustomerController extends Controller
     //public function edit(string $id)
     public function edit(Customer $customer)
     {
-        dd($customer);
         return view('customers.edit', compact('customer'));
     }
 
@@ -69,6 +68,7 @@ class CustomerController extends Controller
             'name'       => 'required|string|max:255',
             'email'      => 'nullable|email|max:255',
             'phone'      => 'nullable|string|max:20',
+            'gst_number' => 'nullable|string|max:255',
             'address'    => 'nullable|string|max:500',
         ]);
 
