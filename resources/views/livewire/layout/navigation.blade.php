@@ -35,10 +35,34 @@ new class extends Component
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-                
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('customers.index')" :active="request()->routeIs('customers.*')" wire:navigate>
                         Customers
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('drivers.index')" :active="request()->routeIs('drivers.*')" wire:navigate>
+                        Drivers
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('owners.index')" :active="request()->routeIs('owners.*')" wire:navigate>
+                        Owners
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('vehicles.index')" :active="request()->routeIs('vehicles.*')" wire:navigate>
+                        Vehicles
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('vehicle-model-prices.index')" :active="request()->routeIs('vehicle-model-prices.*')" wire:navigate>
+                        Model Prices
                     </x-nav-link>
                 </div>
 
